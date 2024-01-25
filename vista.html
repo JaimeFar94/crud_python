@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form name = "registro" method = "post"  action="/vista" enctype="multipart/form-data"> 
+    <input type="hidden" name="documento" value="{{paciente.documento}}">
+
+<table class="default">
+    <caption>Cover Test (CT)</caption>
+    <tr>
+        <th><label for="vision_lejos">VISIÓN LEJANA</label> </th>
+        <td><input type="text" name="vision_lejos" id="vision_lejos" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="vision_proxima">VISION PRÓXIMA</label></th>
+
+        <td><input type="text" name="vision_proxima" id="vision_proxima" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="ducciones_od">DUCCIONES OD</label></th>
+
+        <td><input type="text" name="ducciones_od" id="ducciones_od" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="ducciones_oi">DUCCIONES OI</label></th>
+
+        <td><input type="text" name="ducciones_oi" id="ducciones_oi" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="ppc_od">PPC OD</label></th>
+
+        <td><input type="text" name="ppc_od" id="ppc_od" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="ppc_oi">PPC OI</label></th>
+
+        <td><input type="text" name="ppc_oi" id="ppc_oi" class="form-control"></td>
+    </tr>
+</table>
+
+
+<table class="default">
+    <caption>OFTALMOSCOPIA</caption>
+    <tr>
+        <th><label for="ojo_derecho">OJO DERECHO</label></th>
+
+        <td><input type="text" name="ojo_derecho" id="ojo_derecho" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="ojo_izquierdo">OJO IZQUIERDO</label></th>
+
+        <td><input type="text" name="ojo_izquierdo" id="ojo_izquierdo" class="form-control"></td>
+    </tr>
+</table>
+<table class="default">
+    <caption>QUERATOMETRIA</caption>
+    <tr>
+        <th><label for="ojo_dere">OJO DERECHO</label></th>
+
+        <td><input type="text" name="ojo_dere" id="ojo_dere" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="ojo_izqui">OJO IZQUIERDO</label></th>
+
+        <td><input type="text" name="ojo_izqui" id="ojo_izqui" class="form-control"></td>
+    </tr>
+</table>
+<table class="default">
+    <caption>REFACTROMETRIA</caption>
+    <tr>
+        <th><label for="ojo_derch">OJO DERECHO</label></th>
+
+        <td><input type="text" name="ojo_derch" id="ojo_derch" class="form-control"></td>
+    </tr>
+    <tr>
+        <th><label for="ojo_izquier">OJO IZQUIERDO</label></th>
+
+        <td><input type="text" name="ojo_izquier" id="ojo_izquier" class="form-control"></td>
+    </tr>
+</table>
+
+<table class="default">
+    <caption>RETINOSCOPIA</caption>
+    <tr>
+        <th><label for="esfera">OJO DERECHO</label></th>
+
+        <td><input type="text" name="esfera" id="esfera" class="form-control" placeholder="Esfera"></td>
+        <td><input type="text" name="cilindro" id="cilindro" class="form-control" placeholder="Cilindro"></td>
+        <td><input type="text" name="eje" id="eje" class="form-control" placeholder="Eje"></td>
+        <td><input type="text" name="dp" id="dp" class="form-control" placeholder="D.P"></td>
+        <td><input type="text" name="vl20" id="vl20" class="form-control" placeholder="AV VL20/"></td>
+        <td><input type="text" name="vp20" id="vp20" class="form-control" placeholder="AV VP20/"></td>
+        <td><input type="text" name="add" id="add" class="form-control" placeholder="ADD"></td>
+    </tr>
+    <tr>
+        <th><label for="ojo_izq">OJO IZQUIERDO</label></th>
+
+        <td><input type="text" name="esfera_1" id="esfera_1" class="form-control" placeholder="Esfera"></td>
+        <td><input type="text" name="cilindro_1" id="cilindro_1" class="form-control" placeholder="Cilindro"></td>
+        <td><input type="text" name="eje_1" id="eje_1" class="form-control" placeholder="Eje"></td>
+        <td><input type="text" name="dp_1" id="dp_1" class="form-control" placeholder="D.P"></td>
+        <td><input type="text" name="vl20_1" id="vl20_1" class="form-control" placeholder="AV VL20/"></td>
+        <td><input type="text" name="vp20_1" id="vp20_1" class="form-control" placeholder="AV VP20/"></td>
+        <td><input type="text" name="add_1" id="add_1" class="form-control" placeholder="ADD"></td>
+    </tr>
+</table>
+
+<button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
+
+{% endblock %}

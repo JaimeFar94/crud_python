@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <form method="POST" class="form-signin" enctype="multipart/form-data">
+        <h2 class="text-center">Iniciar Sesión</h2>
+
+        <div class="form-group">
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" name="usuario" id="usuario" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" id="contrasena" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+
+        <p class="text-center">¿No tienes cuenta? <a href="/signup">Regístrate</a></p>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+{% endblock %}

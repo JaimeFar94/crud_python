@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<form method="post" action="/antecedentes" enctype="multipart/form-data">
+    <input type="hidden" name="documento" value="{{paciente.documento}}">
+    <table class="default">
+
+        <caption>Antecedentes Familirares</caption>
+        <tr>
+
+            <th scope="col">Antecedentes En</th>
+            <th>Observación</th>
+
+        </tr>
+        <tr>
+
+            <th>DIABETES</th>
+
+            <td>
+                <select name="dia" id="dia">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <th>HIPERTENSIÓN</th>
+
+            <td>
+                <select name="hiper" id="hiper">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+
+            <th>ARTRITIS</th>
+
+            <td>
+                <select name="artr" id="artr">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <th>ALERGIA</th>
+
+            <td>
+                <select name="aler" id="aler">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+
+        </tr>
+        <tr>
+
+            <th>CATARATA</th>
+
+            <td>
+                <select name="cata" id="cata">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <th>GLAUCOMA</th>
+
+            <td>
+                <select name="glau" id="glau">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <th>ESTRABISMO</th>
+
+            <td>
+                <select name="estra" id="estra">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+
+        </tr>
+        <tr>
+
+            <th>QUERATOCONO</th>
+
+            <td>
+                <select name="quera" id="quera">
+                    <option value="no_refiere">NO REFIERE</option>
+                    <option value="refiere">REFIERE</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+
+            <th><label for="otros">OTROS</label></th>
+
+            <td><input type="text" name="otros" id="otros" class="form-control"></td>
+
+            <td></td>
+
+            <td></td>
+
+        </tr>
+
+    </table>
+
+
+    <table class="default">
+        <caption>Antecedentes Personales</caption>
+        <tr>
+
+            <th scope="col">Antecedentes En</th>
+            <th>Observación</th>
+
+        </tr>
+
+        <tr>
+            <th><label for="diabetes">DIABETES</label></th>
+
+            <td><input type="text" name="diabetes" id="diabetes" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><label for="hipertension">HIPERTENSIÓN</label></th>
+
+            <td><input type="text" name="hipertension" id="hipertension" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><label for="artritis">ARTRITIS</label></th>
+
+            <td><input type="text" name="artritis" id="artritis" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><label for="alergia">ALERGIA</label></th>
+
+            <td><input type="text" name="alergia" id="alergia" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><label for="ulcera">ÚLCERA GÁSTRICA</label></th>
+
+            <td><input type="text" name="ulcera" id="ulcera" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><label for="cirugia">CIRUGÍA REFRACTIVA</label></th>
+
+            <td><input type="text" name="cirugia" id="cirugia" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><label for="lentes">LENTES DE CONTACTO</label></th>
+
+            <td><input type="text" name="lentes" id="lentes" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><label for="otros_1">OTROS</label></th>
+
+            <td><input type="text" name="otros_1" id="otros_1" class="form-control"></td>
+        </tr>
+
+
+    </table>
+
+    <table class="default">
+        <caption>Antecedentes Quirúrgicos</caption>
+        <tr>
+
+            <th scope="col">Antecedentes En</th>
+            <th>Observación</th>
+
+        </tr>
+        <tr>
+            <th><label for="descripcion">Describalo</label></th>
+
+            <td><input type="text" name="descripcion" id="descripcion" class="form-control"></td>
+        </tr>
+
+    </table>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
+
+
+{% endblock %}

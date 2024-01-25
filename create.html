@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post" action="/index" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Información Personal</legend>
+        <div class="form-group">
+            <label for="txtDocumento">Documento:</label>
+            <input type="text" name="txtDocumento" id="txtDocumento" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <select name="tipo_documento" id="tipo_documento" class="form-control">
+                <option value="cedula">C.C</option>
+                <option value="tarjeta_identidad">T.I</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Nombre">Nombre:</label>
+            <input type="text" name="Nombre" id="Nombre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Edad">Edad:</label>
+            <input type="text" name="Edad" id="Edad" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="genero">Género:</label>
+            <select name="genero" id="genero" class="form-control">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" name="direccion" id="direccion" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono" id="telefono" class="form-control">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Información Adicional</legend>
+        <div class="form-group">
+            <label for="eps">EPS:</label>
+            <input type="text" name="eps" id="eps" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cargo">Ocupación</label>
+            <input type="text" name="cargo" id="cargo" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="acompanante">Acompañante:</label>
+            <input type="text" name="acompanante" id="acompanante" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="parentesco">Parentesco:</label>
+            <input type="text" name="parentesco" id="parentesco" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="telefono_acompanante">Teléfono del Acompañante:</label>
+            <input type="text" name="telefono_acompanante" id="telefono_acompanante" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="motivo_consulta">Motivo de la Consulta:</label>
+            <textarea name="motivo_consulta" rows="5" cols="40" id="motivo_consulta" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="ultima_revision">Última Revisión:</label>
+            <input type="date" name="ultima_revision" id="ultima_revision" class="form-control">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Adjuntar Foto</legend>
+        <div class="form-group">
+            <label for="foto">Foto:</label>
+            <input type="file" name="foto" id="foto" class="form-control">
+        </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<button id="mybutton" class="btn btn-secondary">Regresar</button>
+
+<script type="text/javascript">
+    document.getElementById("mybutton").onclick = function () {
+        location.href = "/index";  // Redirige a la página de inicio de la aplicación
+    }
+</script>
+{% endblock %}
