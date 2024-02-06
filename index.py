@@ -9,11 +9,11 @@ from werkzeug.utils import secure_filename
 import os
 import uuid
 
+#connection-JaimeFar94
+
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-
-app = Flask(__name__)  #se crea la variable para crear las rutas del servidor 
-app.secret_key = '137-372-314'
+app.permanent_session_lifetime = False
 
 mysql = MySQL()
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
@@ -21,6 +21,7 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''  # Puede omitirse esta parte si no tiene contraseña
 app.config['MYSQL_DATABASE_DB'] = 'medico'
 mysql.init_app(app)
+
 
 @app.route('/Logeo', methods= ['GET', 'POST'])
 def login():
@@ -39,6 +40,7 @@ def login():
             # Las credenciales son válidas, inicia sesión y redirige al usuario
             session['usuario'] = _usuario
             session['user_authenticated'] = True
+            flash('Inicio de sesión exitoso', 'success')
             return redirect(url_for('index'))
         else:
             # Las credenciales no son válidas, muestra un mensaje de error
@@ -259,6 +261,7 @@ def index():
         cursor.close()
         conn.close()
 
+        flash('¡El Paciente se ha registrado Correctado!','Sucess')
 
     return render_template('index.html', user_authenticated=user_authenticated, paciente=paciente,ruta_foto=ruta_foto)
 
@@ -526,5 +529,7 @@ def logout():
     session.pop('usuario', None)
     return redirect(url_for('login')) 
 
+
 if __name__ =='__main__': #Se tiene un condicional para verificar que si se esta en el archivo de ejecución y no un modulo
-    app.run(debug=True) #se pone un debug con un booleano para que se recarge la pagina 
+
+    app.run( host="0.0.0.0", port=80, debug=True) #se pone un debug con un booleano para que se recarge la pagina 
