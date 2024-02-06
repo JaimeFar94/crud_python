@@ -12,13 +12,13 @@ import uuid
 #connection-JaimeFar94
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-
+app.secret_key='137-372-314'
 app.permanent_session_lifetime = False
 
 mysql = MySQL()
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''  # Puede omitirse esta parte si no tiene contraseña
+app.config['MYSQL_DATABASE_HOST'] = 'medico.cv0gq8eacxgc.us-east-2.rds.amazonaws.com'
+app.config['MYSQL_DATABASE_USER'] = 'admin'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Medico2581895'  # Puede omitirse esta parte si no tiene contraseña
 app.config['MYSQL_DATABASE_DB'] = 'medico'
 mysql.init_app(app)
 
