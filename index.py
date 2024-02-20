@@ -18,7 +18,7 @@ app.permanent_session_lifetime = False
 mysql = MySQL()
 app.config['MYSQL_DATABASE_HOST'] = 'medico.cv0gq8eacxgc.us-east-2.rds.amazonaws.com'
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Medico2581895'  # Puede omitirse esta parte si no tiene contraseña
+app.config['MYSQL_DATABASE_PASSWORD'] = ''  # Puede omitirse esta parte si no tiene contraseña
 app.config['MYSQL_DATABASE_DB'] = 'medico'
 mysql.init_app(app)
 
